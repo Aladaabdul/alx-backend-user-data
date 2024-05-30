@@ -9,6 +9,9 @@ from typing import List
 
 
 def filter_datum(
+        """filter_datum function
+
+        """
         fields: List[str],
         redaction: str,
         message: str,
