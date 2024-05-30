@@ -9,14 +9,14 @@ from typing import List
 
 
 def filter_datum(
-        """filter_datum function
-
-        """
         fields: List[str],
         redaction: str,
         message: str,
         separator: str
         ) -> str:
+    """filter_datum function
+
+    """
     pattern = r'({}=).*?(?={})'.format(
             '|'.join(re.escape(field) for field in fields),
             re.escape(separator))
