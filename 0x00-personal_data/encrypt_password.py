@@ -15,7 +15,7 @@ def hash_password(password: str) -> bytes:
     return hash
 
 
-def is_valid(hashed_password: bytes, password: str):
+def is_valid(hashed_password: bytes, password: str) -> bool:
     """is_valid function
 
     """
