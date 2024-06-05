@@ -5,6 +5,8 @@
 
 from api.v1.auth.auth import Auth
 import uuid
+from api.v1.auth.auth import Auth
+from models.user import User
 
 
 class SessionAuth(Auth):
@@ -32,3 +34,10 @@ class SessionAuth(Auth):
             return None
         if type(session_id) is str:
             return self.user_id_by_session_id.get(session_id)
+
+    def current_user(self, request=None) -> User:
+        """current_user function
+
+        """
+        user_id = self.user_id_for_session_id(self.session_cookie(request))
+        return User.get(user_id)
