@@ -3,7 +3,7 @@
 
 """Flask app"""
 
-from flask import Flask, jsonify, request, abort, redirect
+from flask import Flask, jsonify, request, abort, redirect, url_for
 from auth import Auth
 
 
@@ -64,7 +64,7 @@ def logout() -> str:
     if user is None:
         abort(403)
     Auth.destroy_session(user.id)
-    return redirect("/")
+    return redirect(url_for("home"))
 
 
 if __name__ == "__main__":
