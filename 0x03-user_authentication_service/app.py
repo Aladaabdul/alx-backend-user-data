@@ -54,7 +54,7 @@ def sessions():
 
 
 @app.route('/sessions', methods=["DELETE"], strict_slashes=False)
-def delete_session():
+def delete_session() -> str:
     """delete session
 
     """
