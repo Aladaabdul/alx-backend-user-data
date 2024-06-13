@@ -115,7 +115,7 @@ def update_password() -> str:
         token = None
     if token is None:
         abort(403)
-    return jsonify({"email": email, "message": "Password updated"})
+    return jsonify({"email": email, "message": "Password updated"}), 200
 
 
 if __name__ == "__main__":
